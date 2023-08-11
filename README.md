@@ -62,7 +62,7 @@ The following code demonstrates how to produce images like Figure 5 in the paper
 ### We will create a callback function for both, but use the time condition in this example (you could also combine them)
 ### the poincare surface is \dot{r} = 0, \dot{ϕ} > 0. it is written in cartesian coordinates in the function. the \dot{r} condition has a tolerance of 0.001.
 
-tspan_comp = (0.0,80.0) #max integration time (much reduced for memory reasons, here it is from 0 to approx where escape is not possible)
+tspan_comp = (0.0,80.0) #max integration time (much reduced from normal, here it is from 0 to approx where escape is not possible)
 t_crossing_i = 17.0 #(approx time until average energy is 0.3 if started at 0.35)
 t_crossing_f = 30.0 #max time points have to cross the section until we stop looking. if we wait too long, their energy will be very different from 0.3.
 
