@@ -32,7 +32,7 @@ We were interested in statistical properties of ensembles of trajectories. All o
 
 To simulate an ensemble of $npts$ initial conditions chosen uniformly from the configuration space $(x,y)$ with initial energy $E$ and dissipation strength $\gamma$,
 you can call `EnsembleSurvivalTime_D(npts,E,γ)`. This returns an `EnsembleSolution` object. 
-The information returned by the integrator is user specified (see the documentation for `DifferentialEquations.jl`),
+The information returned by the integrator is user specified (see the [documentation](https://docs.sciml.ai/DiffEqDocs/stable/features/ensemble/) for `DifferentialEquations.jl`),
 but by default `EnsembleSurvivalTime_D` supplies only the escape/settling time of each trajectory (for memory reasons). When the escape time is presented as a `DataFrame` under a column `t`, the function `SurvivalProbabilityCurve`
 will generate another `DataFrame` with two columns `t` and `p`, information which represents the survival probability. 
 
