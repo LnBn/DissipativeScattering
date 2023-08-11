@@ -1,4 +1,4 @@
-# DissipativeScattering
+# Dissipative Chaotic Scattering
 This repository contains the Julia code used to generate the results in the paper "Probabilistic description of dissipative chaotic scattering".
 
 ## Packages
