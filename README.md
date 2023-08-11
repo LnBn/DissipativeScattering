@@ -62,7 +62,7 @@ The following code demonstrates how to produce images like Figure 5 in the paper
 ### We will create a callback function for both, but use the time condition in this example (you could also combine them)
 ### the poincare surface is \dot{r} = 0, \dot{ϕ} > 0. it is written in cartesian coordinates in the function. the \dot{r} condition has a tolerance of 0.001.
 
-tspan_comp = (0.0,60.0) #max integration time (much reduced for memory reasons, here it is from 0 to approx where escape is not possible)
+tspan_comp = (0.0,80.0) #max integration time (much reduced for memory reasons, here it is from 0 to approx where escape is not possible)
 t_crossing_i = 17.0 #(approx time until average energy is 0.3 if started at 0.35)
 t_crossing_f = 30.0 #max time points have to cross the section until we stop looking. if we wait too long, their energy will be very different from 0.3.
 
@@ -92,7 +92,7 @@ diffeq_D8 = (alg = Vern9(),saveat=5.0,callback=cb_D4,abstol=1e-10,reltol=1e-10,m
 simD_psos = EnsembleSurvivalTime_D4(5*10^6,0.35,0.01) 
 
 ### many of the trajectories will terminate because of escape. We only want to see the ones that:
-# 1. survive until at least t_crossing, but didn't take too long to cross.
+# 1. survive until at least t_crossing_i, but didn't take too long to cross.
 # 2. terminate inside the scattering region. We will filter out the points that dont satisfy this
 simDf_psos = filter(x -> (t_crossing_i < x.t[end] < t_crossing_f),simD_psos.u) #only long lived points (but not too long...)
 simDf_psos = filter(x -> norm(x.u[end][1:2]) < 1,simDf_psos) #only points that didn't escape
