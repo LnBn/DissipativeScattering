@@ -1,5 +1,5 @@
 # Dissipative Chaotic Scattering
-This repository contains the Julia code used to generate the results in the paper "Probabilistic description of dissipative chaotic scattering".
+This repository contains the Julia code used to generate the results in the paper "Probabilistic description of dissipative chaotic scattering" by L.G. Burton, H.R. Dullin and E.G. Altmann.
 
 ## Packages
 The simulations were performed mainly using the  [DifferentialEquations.jl](https://github.com/SciML/DifferentialEquations.jl) and [DynamicalSystems.jl](https://juliadynamics.github.io/DynamicalSystems.jl/dev/) libraries. Other third-party libraries used were:
