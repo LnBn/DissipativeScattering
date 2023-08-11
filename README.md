@@ -45,4 +45,7 @@ dfs = SurvivalProbabilityCurve(df)
 plot(dfs.t,dfs.p,yscale=:log10,lab=false,xlab="t",ylab="P(t)",title="Survival Probability")
 
 ```
+which produces 
+
+![Survival Probability](Images/survprob.pdf)
 
