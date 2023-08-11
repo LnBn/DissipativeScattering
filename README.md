@@ -111,7 +111,7 @@ plot(umDp.x,umDp.y,st=:scatter,ms=1,msw=0,xlab="x",ylab="y",lab=false)
 ```
 Which produces
 
-![spatial distribution](spatial_distribution.png)
+![spatial distribution](Images/spatial_distribution.png)
 
 As you can see, you need a lot of initial points to get a visible image.
 
