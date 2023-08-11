@@ -24,7 +24,7 @@ $$
 \end{equation}
 $$
 
-We were interested in statistical properties of ensembles of trajectories. All of the source codes are included in `dissipative_scattering_functions.jl`, which can loaded with `include("/path/to/dissipative_scattering_functions.jl")`. 
+We were interested in statistical properties of ensembles of trajectories. All of the source codes are included in `dissipative_scattering_functions.jl`, which can loaded with `include("/src/dissipative_scattering_functions.jl")`. 
 
 
 ## Example Usage
@@ -109,6 +109,9 @@ end
 plot(umDp.x,umDp.y,st=:scatter,ms=1,msw=0,xlab="x",ylab="y",lab=false)
 
 ```
+Which produces
+
+![spatial distribution](spatial_distribution.png)
 
 As you can see, you need a lot of initial points to get a visible image.
 
