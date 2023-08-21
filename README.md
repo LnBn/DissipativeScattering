@@ -71,7 +71,7 @@ function psos_condition_time(u,t,integrator)
 end
 
 function psos_condition_energy(u,t,integrator)
-    (Emin < u[5] < Emax) && (abs(u[1]*u[3]+u[2]*u[4]) < 1e-3) && ((-u[3]/u[2] > 0) || (u[4]/u[1]) > 0) 
+    (Emin < u[5] < Emax) && (abs(u[1]*u[3]+u[2]*u[4]) < 1e-3) && ((-u[3]/u[2] > 0) && (u[4]/u[1]) > 0) 
 end
 
 ### we will stop integrating when this condition is reached:
