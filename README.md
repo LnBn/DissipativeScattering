@@ -67,11 +67,11 @@ t_crossing_i = 17.0 #(approx time until average energy is 0.3 if started at 0.35
 t_crossing_f = 30.0 #max time points have to cross the section until we stop looking. if we wait too long, their energy will be very different from 0.3.
 
 function psos_condition_time(u,t,integrator)
-    (t_crossing_i <t < t_crossing_f) && (abs(u[1]*u[3]+u[2]*u[4]) < 1e-3) && ((-u[3]/u[2] > 0) && (u[4]/u[1]) > 0) 
+    (t_crossing_i <t < t_crossing_f) && (abs(u[1]*u[3]+u[2]*u[4]) < 1e-3) && ((-u[3]/u[2] > 0) || (u[4]/u[1]) > 0) 
 end
 
 function psos_condition_energy(u,t,integrator)
-    (Emin < u[5] < Emax) && (abs(u[1]*u[3]+u[2]*u[4]) < 1e-3) && ((-u[3]/u[2] > 0) && (u[4]/u[1]) > 0) 
+    (Emin < u[5] < Emax) && (abs(u[1]*u[3]+u[2]*u[4]) < 1e-3) && ((-u[3]/u[2] > 0) || (u[4]/u[1]) > 0) 
 end
 
 ### we will stop integrating when this condition is reached:
