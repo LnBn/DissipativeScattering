@@ -78,15 +78,15 @@ end
 psos_affect!(integrator) = terminate!(integrator)
 
 ### create callback:
-cb_psos = DiscreteCallback(psos_condition_time,psos_affect!)
+cb_psos = DiscreteCallback(psos_condition_time,psos_affect!,save_positions=(false,true))
 
-### add in the other callbacks (escape, energy < Ec, etc)
+### add in the other callbacks (escape, energy < Ec, etc). These are defined in the source code.
 cb_D4 = CallbackSet(cb_escape_diss2,cb_psos,cb_D)
 
 
 ### generate and integrate the ensemble
-#solver options. saving too frequently causes memory issues. in extreme cases only saving the endpoints (save_everystep=false) is probably fine. 
-diffeq_D8 = (alg = Vern9(),saveat=5.0,callback=cb_D4,abstol=1e-10,reltol=1e-10,maxiters=1e10);
+#solver options. Here the only integrator steps which are saved are those for which an event triggers.
+diffeq_D8 = (alg = Vern9(),saveat=5.0,callback=cb_D4,abstol=1e-10,reltol=1e-10,maxiters=1e10,save_everystep = false,save_start = false, save_end = false);
 
 #this function is like the other EnsembleSurvivalTime_D... functions, it just uses the solver options above.
 simD_psos = EnsembleSurvivalTime_D4(5*10^6,0.35,0.01) 
